@@ -1,0 +1,190 @@
+{% extends "base.html" %}
+
+{% block title %}
+Create a Comic · ComicCraft
+{% endblock %}
+
+
+{% block content %}
+
+<section class="hero">
+
+    <p class="eyebrow">
+        GENERATIVE AI STORYTELLING
+    </p>
+
+    <h1>
+        Turn an idea into a comic.
+    </h1>
+
+    <p>
+        Describe your story and ComicCraft
+        creates a connected five-panel comic
+        with narration, dialogue, illustrations,
+        and a downloadable PDF.
+    </p>
+
+</section>
+
+
+<form
+    class="card form-card"
+    action="/generate"
+    method="post"
+>
+
+
+    <!-- Story prompt -->
+
+    <label>
+
+        Story Prompt
+
+        <textarea
+            name="story_prompt"
+            maxlength="2000"
+            required
+            placeholder="A brave fox exploring an enchanted forest..."
+        ></textarea>
+
+    </label>
+
+
+    <div class="grid">
+
+
+        <!-- Character -->
+
+        <label>
+
+            Main Character Name
+
+            <input
+                name="character_name"
+                required
+                placeholder="Luna"
+            >
+
+        </label>
+
+
+        <!-- Setting -->
+
+        <label>
+
+            Setting
+
+            <select
+                name="setting"
+            >
+
+                <option>
+                    Forest
+                </option>
+
+                <option>
+                    School
+                </option>
+
+                <option>
+                    City
+                </option>
+
+                <option>
+                    Space
+                </option>
+
+                <option>
+                    Fantasy Kingdom
+                </option>
+
+            </select>
+
+        </label>
+
+
+        <!-- Tone -->
+
+        <label>
+
+            Story Tone
+
+            <select
+                name="tone"
+            >
+
+                <option>
+                    Light-hearted
+                </option>
+
+                <option>
+                    Funny
+                </option>
+
+                <option>
+                    Dramatic
+                </option>
+
+                <option>
+                    Poetic
+                </option>
+
+            </select>
+
+        </label>
+
+
+        <!-- Art style -->
+
+        <label>
+
+            Art Style
+
+            <select
+                name="art_style"
+            >
+
+                <option>
+                    Comic book
+                </option>
+
+                <option>
+                    Anime
+                </option>
+
+                <option>
+                    Pixel art
+                </option>
+
+                <option>
+                    Realistic
+                </option>
+
+            </select>
+
+        </label>
+
+    </div>
+
+
+    <button
+        class="primary"
+        type="submit"
+    >
+
+        ✨ Generate My Comic
+
+    </button>
+
+
+    <p class="hint">
+
+        Generation can take several minutes
+        when Stable Diffusion is running locally.
+
+    </p>
+
+
+</form>
+
+{% endblock %}
